@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HEAD SECTION (NO CHANGE NEEDED) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHCC 7 Days Mega Fest | VBU Hazaribag</title>
+     <link rel="stylesheet" href="style.css"> 
+      <script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- 1️⃣ HERO SECTION (Event Name + Dates) EDIT HERE -->
+<section class="hero">
+   <h1>🎉 IHCC 7 DAYS MEGA FEST 2026 🎉</h1>
+<p>VBU Hazaribag | 38 Events • 5000+ Crowd</p>
+<p><strong>10000+ participants Crowd | may-june , 2026</strong></p>
+<a href="#tickets" class="btn">Get Tickets → ₹30/50/300</a>
+</section>
+
+<!-- Hero के नीचे add -->
+<div class="social-proof">
+    <p>👥 <strong>2500+</strong> Registered | 🌟 <strong>4.8/5</strong> Rating</p>
+    <div id="countdown">Loading...</div>
+</div>
+
+
+<!-- 2️⃣ EVENTS SECTION (42 Events List) EDIT HERE -->
+<section id="events" class="section">
+    <h2>🏆 [38 events] Mega Events</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>⚽ SPORTS (15)</h3>     <!-- EDIT: Event names -->
+            <p>Cricket • Football • Chess • Badminton . carrom . atheletes racing . high jump . long jump .push ups challenge . pull ups challenge  . arm wrestling  competition .weight lifting competition .table tennis .swimming .javelin throw</p>
+        </div>
+
+         <div class="card">
+            <h3>⚽ cultural (10)</h3> 
+            <p> dance . music . fine arts . quizzes .photography . video editing .photo editing . weapon art . fashion walk .poetry </p>
+        </div>
+        
+         <div class="card">
+            <h3>⚽ technical (7)</h3>
+            <p> .hackathons . tech quiz .lan gaming .code wars .project expo .debugging challenge .promptopia </p>
+        </div>
+        
+         <div class="card">
+            <h3>⚽ skills (6)</h3>
+            <p>buisness pitch .creative and artistic art challenge .speaking skills .writing skills .practical life skills .team challenge </p>
+        </div>    
+        
+        <!-- COPY 3 more cards: Cultural, Tech, Skills -->
+    </div>
+</section>
+
+<!-- 3️⃣ TICKETS SECTION (Pricing) EDIT HERE -->
+<section id="tickets" class="section">
+    <h2>🎫 Entry Passes (Unlimited Access)</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="price">₹30</div>  <!-- YOUR PRICE -->
+            <h3>General</h3>
+            <ul class="features">
+                <li>✅ each Events</li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+
+         <div class="grid">
+        <div class="card">
+            <div class="price">₹50</div>  <!-- YOUR PRICE -->
+            <h3>middle row seats in all events</h3>
+            <ul class="features">
+                <li>✅ each Events</li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+
+         <div class="grid">
+        <div class="card">
+            <div class="price">₹300</div>  <!-- YOUR PRICE -->
+            <h3>VIP </h3>
+            <ul class="features">
+                <li>✅ triple Events benefit+ snacks and tea (all events)+front seats +no queue system </li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+
+         <div class="grid">
+        <div class="card">
+            <div class="price">₹1000</div>  <!-- YOUR PRICE -->
+            <h3>master pass</h3>
+            <ul class="features">
+                <li>✅ all Events + anywhere you can seat</li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+
+         <div class="grid">
+        <div class="card">
+            <div class="price">₹3000</div>  <!-- YOUR PRICE -->
+            <h3>gold master card</h3>
+            <ul class="features">
+                <li>✅ all Events + vip quota benefits</li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+
+         <div class="grid">
+        <div class="card">
+            <div class="price">₹2000</div>  <!-- YOUR PRICE -->
+            <h3>family pass</h3>
+            <ul class="features">
+                <li>✅ 4 members can allow at middle seat + penta events benefits</li>       <!-- EDIT FEATURES -->
+            </ul>
+        </div>
+        <!-- COPY 2 more: ₹50 Front, ₹300 VIP -->
+    </div>
+</section>
+
+<!-- 👥 MEMBER LOGIN PORTAL -->
+<section id="members" class="section">
+    <h2>🔐 Member Dashboard</h2>
+    <div class="grid">
+        <div class="card login-card">
+            <h3>👑 Organizers Login</h3>
+            <input type="text" id="member-id" placeholder="Member ID" class="login-input">
+            <input type="password" id="member-pin" placeholder="PIN (4 digits)" class="login-input">
+            <button onclick="memberLogin()" class="btn">🚀 Access Dashboard</button>
+            <p id="member-status"></p>
+        </div>
+        <div class="card" id="member-dashboard" style="display:none;">
+            <h3>📊 Admin Control</h3>
+            <p>Total Revenue: <span id="total-revenue">₹0</span></p>
+            <p>Tickets Sold: <span id="admin-tickets">0</span></p>
+            <button onclick="resetCounter()">🔄 Reset Counter</button>
+        </div>
+    </div>
+</section>
+
+<!-- Member dashboard में ये add -->
+<div class="member-table">
+    <h4>📋 Pending Registrations</h4>
+    <table>
+        <tr><th>ID</th><th>Name</th><th>Phone</th><th>Action</th></tr>
+        <tbody id="pending-members"></tbody>
+    </table>
+</div>
+
+
+
+<!-- ➕ NEW ACCOUNT REGISTRATION -->
+<section id="register" class="section">
+    <h2>➕ Create New Account</h2>
+    <div class="grid">
+        <!-- Participant Registration -->
+        <div class="card login-card">
+            <h3>🏅 Participant Registration</h3>
+            <form id="participant-form">
+                <input type="text" id="new-name" placeholder="Full Name" required class="login-input">
+                <input type="tel" id="new-phone" placeholder="WhatsApp Number (9xxxxxxxxx)" required class="login-input">
+                <input type="text" id="new-events" placeholder="Events (Cricket,Dance)" required class="login-input">
+                <button type="submit" class="btn">📝 Register Participant</button>
+            </form>
+            <p id="reg-status"></p>
+        </div>
+
+        <!-- Member/Volunteer Registration -->
+        <div class="card login-card">
+            <h3>👑 Member/Volunteer</h3>
+            <form id="member-form">
+                <input type="text" id="new-member-name" placeholder="Full Name" required class="login-input">
+                <input type="tel" id="new-member-phone" placeholder="WhatsApp Number" required class="login-input">
+                <select id="member-role" class="login-input">
+                    <option value="volunteer">Volunteer</option>
+                    <option value="organizer">Organizer</option>
+                    <option value="judge">Judge</option>
+                </select>
+                <button type="submit" class="btn">🔐 Register Member</button>
+            </form>
+            <p id="member-reg-status"></p>
+        </div>
+    </div>
+</section>
+
+<!-- 🏆 PARTICIPANT LOGIN -->
+<section id="participants" class="section">
+    <h2>🏅 Participant Portal</h2>
+    <div class="grid">
+        <div class="card login-card">
+            <h3>📝 Check Entry Card</h3>
+            <input type="text" id="participant-id" placeholder="Registration ID" class="login-input">
+            <input type="text" id="participant-name" placeholder="Full Name" class="login-input">
+            <button onclick="checkEntryCard()" class="btn">✅ Verify Entry</button>
+            <div id="entry-card" style="display:none;"></div>
+        </div>
+        <div class="card">
+            <h3>🥇 Live Results</h3>
+            <div id="live-results">
+                <p>Cricket Final: Team A vs Team B</p>
+                <p>Dance Winner: Participant #P123</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 4️⃣ REGISTRATION FORM (Google Form) EDIT HERE -->
+<section id="register" class="section">
+    <h2>📝all Registrations </h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSex81YZ7dWRp9q6vzkicpAJ5jEhk0_OWz5pPktGPpoDUjhAQg/viewform?usp=publish-editor" 
+            width="100%" height="600">Loading...</iframe>  <!-- Google Form Link -->
+</section>
+
+<!-- 5️⃣ UPI PAYMENT SECTION (Screenshot QR) EDIT HERE -->
+<section id="upi" class="section">
+    <h2>💰 UPI Payment</h2>
+    <p>Pay → Screenshot → WhatsApp [8292344403]</p>
+    <img src="[blob:https://web.whatsapp.com/d7ff10b9-efd7-4862-8eaa-7f907fee677f]" alt="UPI QR">  <!-- Screenshot upload -->
+</section>
+<!-- Tickets के बाद add -->
+<section id="payment" class="section">
+    <h2>💰 UPI Payment</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>📱 Scan & Pay</h3>
+            <img src="upi-qr.jpg" alt="UPI QR" style="max-width:300px;">
+            <p><strong>Pay → Screenshot → WhatsApp: 8292344403</strong></p>
+        </div>
+        <div class="card">
+            <h3>🎫 Payment Status</h3>
+            <input type="text" id="payment-id" placeholder="Payment ID">
+            <button onclick="checkPayment()" class="btn">✅ Verify Payment</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- 🏅 RESULTS & STATUS PORTAL -->
+<section id="results" class="section">
+    <h2>🥇 Live Results & Status</h2>
+    <div class="grid">
+        <!-- Status Checker -->
+        <div class="card">
+            <h3>🔍 Check My Status</h3>
+            <input type="text" id="status-id" placeholder="Registration ID (P001)" class="login-input">
+            <button onclick="checkStatus()" class="btn">🔎 Check Status</button>
+            <div id="status-result" style="display:none; margin-top:20px;"></div>
+        </div>
+
+        <!-- Live Leaderboard -->
+        <div class="card">
+            <h3>🏆 Live Leaderboard</h3>
+            <select id="event-select" onchange="updateLeaderboard()">
+                <option value="cricket">🏏 Cricket</option>
+                <option value="dance">💃 Dance Solo</option>
+                <option value="painting">🎨 Painting</option>
+                <option value="hackathon">⚡ Hackathon</option>
+            </select>
+            <div id="leaderboard" class="leaderboard"></div>
+        </div>
+
+        <!-- Overall Winners -->
+        <div class="card">
+            <h3>👑 Event Champions</h3>
+            <div id="champions-list"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 6️⃣ SPONSORS SECTION (Logos Add) EDIT HERE -->
+<section class="section">
+    <h2>🎖️ Sponsors</h2>
+    <div class="sponsor-grid">
+        <img src="[to be iupdated soon ]" alt="Bank">  <!-- Logo images -->
+        <!-- Add 10 sponsor logos -->
+    </div>
+</section>
+
+<section id="schedule" class="section">
+    <h2>📅 7 Day Schedule</h2>
+    <div class="card">
+        <h3>Day 1-3: Sports</h3>
+        <p>Cricket, Football, Badminton...</p>
+    </div>
+    <div class="card">
+        <h3>Day 4-6: Cultural</h3>
+        <p>Dance, Music, Fashion...</p>
+    </div>
+    <div class="card">
+        <h3>Day 7: Finals + Pro Night</h3>
+        <p>Champions + Celebrity Show</p>
+    </div>
+</section>
+
+<footer>
+    <div class="grid">
+        <div class="card">
+            <h3>📞 Contact</h3>
+            <p>WhatsApp: <strong>8292344403</strong></p>
+            <p>Email: sinhaharshit775@gmail.com</p>
+        </div>
+        <div class="card">
+            <h3>📍 Venue</h3>
+            <p>VBU Hazaribag Campus</p>
+            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_LINK" width="100%" height="200"></iframe>
+        </div>
+    </div>
+</footer>
+
+
+   
+
+
+<!-- 7️⃣ FOOTER (Contact) EDIT HERE -->
+<footer>
+    <p>&copy; 2026 [ihcc] | [VBU + town hall] </p>
+    <p>WhatsApp: [8292344403] | Email: 8292344403 <div sinhaharshit775@gmail.com></div></p>
+</footer>
+
+</body>
+</html>
