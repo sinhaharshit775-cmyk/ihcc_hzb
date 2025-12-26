@@ -1,0 +1,179 @@
+/* 🌞 LIGHT BACKGROUND + DARK FONTS + HERO SLIDESHOW */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #2c3e50; /* DARK FONTS */
+}
+
+/* 🎬 HERO SLIDESHOW (Cricket → Painting → World Cup) */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active { opacity: 1; }
+.slide1 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1552674608-41e2984d4574?w=1400'); } /* Cricket Shot */
+.slide2 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400'); } /* Painting */
+.slide3 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1579952363873-27d3bfad9c6f?w=1400'); } /* World Cup */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.95);
+    padding: 60px 40px;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+}
+
+.hero h1 { 
+    font-size: clamp(3rem, 8vw, 5rem); 
+    color: #1a1a1a !important; /* DARK BLACK */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.hero p { 
+    font-size: clamp(1.3rem, 4vw, 2rem); 
+    color: #34495e !important; /* DARK GREY */
+    font-weight: 400;
+    margin: 15px 0;
+}
+
+/* 🎯 SECTIONS - CLEAN WHITE CARDS */
+.section { 
+    padding: 80px 20px; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+}
+.section h2 { 
+    text-align: center; 
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    color: #2c3e50 !important; /* DARK */
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.8);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    margin: 20px 0; /* SEPARATE SPACING */
+}
+.card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15); 
+}
+
+.card h3 { 
+    color: #1a1a1a !important; /* DARK */
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+    font-weight: 700;
+}
+.card p, .card li { 
+    color: #34495e !important; /* DARK GREY */
+    font-size: 1.1rem;
+}
+
+.price { 
+    font-size: clamp(2.5rem, 8vw, 4rem); 
+    color: #e74c3c !important; /* RED */
+    font-weight: 800; 
+    margin-bottom: 20px; 
+}
+
+/* 🎪 BUTTONS */
+.btn {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white !important;
+    padding: 18px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(52,152,219,0.4);
+    transition: all 0.3s ease;
+}
+.btn:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 40px rgba(52,152,219,0.6); 
+}
+
+/* 📊 GRID */
+.grid { 
+    display
+/* 🏆 RESULTS STYLES */
+.status-card {
+    background: linear-gradient(135deg, #00b894, #00a085);
+    color: white; padding: 25px; border-radius: 15px;
+    text-align: center;
+}
+.rank-list {
+    max-height: 200px; overflow-y: auto;
+}
+.rank-item {
+    display: flex; justify-content: space-between;
+    padding: 12px; margin: 5px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+.rank { font-size: 1.5rem; font-weight: bold; }
+.name { flex: 1; margin-left: 15px; }
+.score { color: #ffd700; font-weight: bold; }
+
+#event-select {
+    width: 100%; padding: 12px; margin-bottom: 15px;
+    border: 2px solid #ddd; border-radius: 10px;
+    font-size: 1rem; background: white;
+}
+/* ➕ REGISTRATION FORMS */
+#register form { display: flex; flex-direction: column; }
+.login-input[required] { border-left: 4px solid #3498db; }
+#reg-status, #member-reg-status {
+    margin-top: 15px; padding: 15px;
+    border-radius: 10px; text-align: center;
+}
+
+/* 📊 DASHBOARD TABLES */
+.member-table, .participant-table {
+    width: 100%; margin-top: 20px;
+    border-collapse: collapse;
+}
+.member-table th, .member-table td {
+    padding: 12px; text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.member-table th { background: #3498db; color: white; }
